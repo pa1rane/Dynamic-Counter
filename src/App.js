@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 const App = () => {
 
  const [count, setCount] = useState(0);
- const [inputValue, setInputValue] = useState(0)
+ const [inputValue, setInputValue] = useState(0);
 
  const handleIncrement = () => {
     setCount(inputValue > 1 ? count + parseInt(inputValue) : count + 1)
-    console.log(count)
  }
 
  const handleDecrement = () => {
@@ -16,9 +15,7 @@ const App = () => {
 
  const handleInputChange = (e) => {
     setInputValue(e.target.value)
-    console.log(inputValue)
  }
-
 
   return (
     <>
@@ -33,7 +30,7 @@ const App = () => {
       <p>Increment OR Decrement by</p>
       <input type="number" value={inputValue} onChange={handleInputChange}/>
       </div>
-      <button className='reset'>Reset</button>
+      <button className='reset' onClick={() => [setCount(0),setInputValue(0)]}>Reset</button>
     </>
   )
 }
